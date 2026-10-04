@@ -1,0 +1,323 @@
+:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --tx: #1d2330;
+  --mu: #6b7385;
+  --ac: #4f46e5;
+  --bd: #e2e5ec;
+  --ok: #15803d;
+  --er: #b91c1c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161c;
+    --card: #1d2029;
+    --tx: #e8eaf0;
+    --mu: #9aa1b3;
+    --ac: #8b85ff;
+    --bd: #2c303c;
+    --ok: #16a34a;
+    --er: #dc2626;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font: 15px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--tx);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  background: var(--card);
+  border-bottom: 1px solid var(--bd);
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 16px;
+  max-width: 1150px;
+  margin: 20px auto;
+  padding: 0 16px;
+  align-items: start;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: sticky;
+  top: 16px;
+}
+
+nav button {
+  text-align: left;
+}
+
+main {
+  min-width: 0;
+}
+
+.center {
+  max-width: 680px;
+  margin: 50px auto;
+  padding: 0 16px;
+}
+
+.auth-card {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.brand p {
+  margin: 3px 0 0;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--ac);
+  color: #fff;
+  font-weight: 700;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.track-card {
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+  padding: 14px;
+  margin-top: 12px;
+}
+
+.track-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--bd);
+  background: var(--card);
+  color: var(--tx);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+button.p {
+  background: var(--ac);
+  color: #fff;
+  border-color: var(--ac);
+}
+
+button.full {
+  width: 100%;
+  margin-top: 8px;
+}
+
+button.on {
+  border-color: var(--ac);
+  color: var(--ac);
+}
+
+button.d {
+  color: var(--er);
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+
+.row > * {
+  flex: 1;
+  min-width: 120px;
+}
+
+.contribution-row {
+  align-items: center;
+}
+
+.fld {
+  display: flex;
+  flex: 1;
+  min-width: 180px;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--mu);
+}
+
+.fld input {
+  width: 100%;
+}
+
+.sc {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 7px 8px;
+  border-bottom: 1px solid var(--bd);
+  vertical-align: top;
+}
+
+th {
+  color: var(--mu);
+  font-weight: 500;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.mu {
+  color: var(--mu);
+}
+
+.big {
+  font-size: 26px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.stat {
+  padding: 12px;
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+}
+
+.b {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: var(--bd);
+  color: var(--mu);
+  margin-left: 6px;
+}
+
+.toast {
+  position: fixed;
+  z-index: 100;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ok);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  max-width: 90%;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.18);
+}
+
+.toast.bad {
+  background: var(--er);
+}
+
+a {
+  color: var(--ac);
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tabs button {
+  flex: 1;
+}
+
+.small {
+  font-size: 13px;
+  margin: 12px 0 0;
+}
+
+@media (max-width: 700px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: static;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .header-user {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
